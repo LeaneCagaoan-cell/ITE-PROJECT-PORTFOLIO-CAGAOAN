@@ -1,0 +1,503 @@
+/* 💜✨ VIBRANT ARTISTIC VIOLET PORTFOLIO */
+:root {
+    --primary: #4C1D95;
+    --secondary: #7C3AED;
+    --accent: #A78BFA;
+    --light: #EDE9FE;
+    --lighter: #F3E8FF;
+    --text: #2D1B69;
+    --text-light: #6D28D9;
+    --bg: #E9D5FF;
+    --card-bg: #FFFFFF;
+    --shadow: 0 6px 24px rgba(76, 29, 149, 0.12);
+    --shadow-hover: 0 12px 36px rgba(76, 29, 149, 0.22);
+}
+.dark-mode {
+    --primary: #C4B5FD;
+    --secondary: #A78BFA;
+    --accent: #DDD6FE;
+    --light: #5B21B6;
+    --lighter: #4C1D95;
+    --text: #EDE9FE;
+    --text-light: #DDD6FE;
+    --bg: #2E1065;
+    --card-bg: #4C1D95;
+    --shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+    --shadow-hover: 0 12px 36px rgba(0, 0, 0, 0.5);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+}
+/* 💜 Animated geometric background pattern */
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.4s ease, color 0.4s ease;
+    position: relative;
+    overflow-x: hidden;
+}
+/* 💜 Floating decorative shapes */
+.bg-shape {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.2;
+    animation: drift 15s ease-in-out infinite;
+}
+.bg-shape.s1 {
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, var(--accent), transparent);
+    top: -100px; right: -50px;
+    animation-delay: 0s;
+}
+.bg-shape.s2 {
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, var(--secondary), transparent);
+    top: 20%; left: -50px;
+    animation-delay: -5s;
+}
+.bg-shape.s3 {
+    width: 250px; height: 250px;
+    background: radial-gradient(circle, var(--primary), transparent);
+    bottom: -80px; right: 10%;
+    animation-delay: -10s;
+}
+.bg-shape.s4 {
+    width: 150px; height: 150px;
+    background: radial-gradient(circle, var(--accent), transparent);
+    top: 50%; right: -30px;
+    animation-delay: -7s;
+}
+.bg-shape.s5 {
+    width: 180px; height: 180px;
+    background: radial-gradient(circle, var(--lighter), transparent);
+    bottom: 20%; left: 5%;
+    animation-delay: -3s;
+}
+@keyframes drift {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(20px, -30px) scale(1.05); }
+    66% { transform: translate(-15px, 20px) scale(0.95); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+/* 💜 Subtle dot grid overlay */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: radial-gradient(circle, var(--secondary) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 0;
+}
+.page-container, .home-section { position: relative; z-index: 1; }
+/* 💜 Navigation with glow & gradient animation */
+.navbar {
+    background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent), var(--secondary), var(--primary));
+    background-size: 300% 100%;
+    animation: navFlow 10s ease infinite;
+    padding: 1.2rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 4px 24px rgba(76, 29, 149, 0.25), 0 0 0 transparent;
+    z-index: 100;
+}
+@keyframes navFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.navbar a {
+    color: white;
+    margin: 0 1.2rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.6px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+.navbar a::before,
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0; height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+.navbar a::before { top: -4px; left: 0; }
+.navbar a::after { bottom: -4px; right: 0; }
+.navbar a:hover::before,
+.navbar a.active::before { width: 100%; }
+.navbar a:hover::after,
+.navbar a.active::after { width: 100%; }
+.navbar a:hover,
+.navbar a.active {
+    color: var(--accent);
+    text-shadow: 0 0 12px rgba(255,255,255,0.4);
+}
+/* 💜 Home section — glass card with decorative border */
+.home-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3.5rem 2rem;
+}
+.home-content {
+    background: rgba(255, 255, 255, 0.75);
+    padding: 3rem 4rem;
+    border-radius: 28px;
+    box-shadow: 0 10px 40px rgba(76, 29, 149, 0.15);
+    backdrop-filter: blur(14px);
+    position: relative;
+    overflow: hidden;
+}
+.home-content::before,
+.home-content::after {
+    content: '';
+    position: absolute;
+    width: 150px; height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--accent), transparent);
+    opacity: 0.2;
+}
+.home-content::before { top: -50px; right: -30px; }
+.home-content::after { bottom: -50px; left: -30px; }
+.dark-mode .home-content {
+    background: rgba(76, 29, 149, 0.5);
+}
+.home-content h1 {
+    font-size: 2.6rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+    position: relative;
+}
+.home-content h1 span {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.greeting {
+    font-size: 1.2rem;
+    color: var(--secondary);
+    margin: 1rem 0 0.5rem;
+    font-weight: 500;
+}
+#current-datetime {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-top: 0.3rem;
+}
+/* 💜 Profile pic — rotating gradient border */
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 2rem;
+    box-shadow: 0 12px 35px rgba(76, 29, 149, 0.25);
+    animation: gentleFloat 6s ease-in-out infinite;
+}
+.profile-wrapper {
+    position: relative;
+    display: inline-block;
+}
+.profile-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    background: linear-gradient(360deg, var(--primary), var(--secondary), var(--accent), var(--secondary), var(--primary));
+    background-size: 400% 400%;
+    animation: rotateBorder 6s linear infinite;
+    z-index: 0;
+}
+.profile-wrapper img {
+    position: relative;
+    z-index: 1;
+    border-radius: 50%;
+    border: 5px solid #fff;
+}
+.dark-mode .profile-wrapper img { border-color: var(--bg); }
+@keyframes gentleFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+@keyframes rotateBorder {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 400% 50%; }
+}
+/* 💜 Page headers — decorative underline */
+.page-container {
+    flex: 1;
+    padding: 3rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+.page-container h1 {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 2.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+.page-container h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 140px; height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary));
+    border-radius: 2px;
+}
+.page-container h1::before,
+.page-container h1 span.deco {
+    content: '✦';
+    position: absolute;
+    bottom: -10px; left: 50%;
+    transform: translateX(-50%);
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+/* 💜 Cards — layered depth & corner accents */
+.skills-grid, .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+.skill-card, .project-card, .contact-box {
+    background: var(--card-bg);
+    padding: 2.2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+.skill-card::before,
+.project-card::before,
+.contact-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 6px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+}
+.skill-card::after,
+.project-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 80px; height: 80px;
+    background: linear-gradient(135deg, transparent 50%, var(--light) 50%);
+    opacity: 0.5;
+    pointer-events: none;
+}
+.skill-card:hover,
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+.skill-card h2, .project-card h3 {
+    color: var(--primary);
+    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.skill-card h2::before {
+    content: '💎';
+    font-size: 1.2rem;
+}
+.project-card h3::before {
+    content: '✨';
+    font-size: 1rem;
+}
+.skill-card ul { list-style: none; padding-left: 0; }
+.skill-card li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--light);
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 1.5rem;
+}
+.skill-card li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.8rem;
+}
+.skill-card li:hover {
+    padding-left: 2rem;
+    color: var(--secondary);
+}
+.skill-card li:last-child { border-bottom: none; }
+/* 💜 Project images */
+.project-card img {
+    width: 100%; height: 200px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 1.3rem;
+    transition: transform 0.3s ease;
+}
+.project-card img:hover { transform: scale(1.04); }
+/* 💜 Buttons — glow & press effect */
+.project-link, button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.85rem 2rem;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: white;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    border: none; cursor: pointer; font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(76,29,149,0.25);
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+.project-link::before, button::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transition: left 0.5s ease;
+}
+.project-link:hover::before, button:hover::before { left: 100%; }
+.project-link:hover, button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(76,29,149,0.35);
+}
+/* 💜 Footer — shimmer */
+footer {
+    background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent), var(--secondary), var(--primary));
+    background-size: 300% 100%;
+    animation: navFlow 10s ease infinite;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+    font-size: 0.95rem;
+    position: relative;
+    z-index: 1;
+}
+footer p { position: relative; z-index: 1; }
+/* 💜 Utilities */
+.hidden { display: none; margin-top: 1.5rem; color: var(--text-light); line-height: 1.8; }
+#back-to-top {
+    position: fixed; bottom: 2rem; right: 2rem;
+    display: none; z-index: 99;
+    padding: 0.7rem 1.3rem;
+}
+.project-card div[style*="background"] {
+    background: linear-gradient(135deg, var(--lighter), var(--light)) !important;
+    color: var(--primary) !important;
+    border-radius: 14px !important;
+    transition: all 0.3s ease !important;
+}
+.project-card div[style*="background"]:hover { transform: scale(1.03) !important; }
+
+/* 💜🎵 ROUND SLIDER MUSIC SWITCH — Upper Left Corner */
+.music-toggle-box {
+    position: fixed;
+    top: 12px;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 7px 14px;
+    border-radius: 50px;
+    box-shadow: 0 3px 10px rgba(106, 27, 154, 0.25);
+    z-index: 9999;
+}
+
+.dark-mode .music-toggle-box {
+    background: rgba(46, 16, 101, 0.9);
+}
+
+.music-icon {
+    font-size: 15px;
+}
+
+/* The Round Switch — Small & Clean */
+.round-switch {
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 22px;
+}
+
+.round-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The Slider Track */
+.round-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #d1c4e9;
+    transition: 0.35s ease;
+    border-radius: 22px;
+}
+
+/* The Round Knob */
+.round-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.35s ease;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+/* ON State — Purple Gradient */
+input:checked + .round-slider {
+    background: linear-gradient(90deg, #7b1fa2, #9c27b0);
+}
+
+input:checked + .round-slider:before {
+    transform: translateX(20px);
+}
+
+/* Responsive — Smaller on phones */
+@media (max-width: 768px) {
+    .music-toggle-box {
+        top: 8px;
+        left: 8px;
+        padding: 6px 12px;
+    }
+    .music-icon { font-size: 14px; }
+}
